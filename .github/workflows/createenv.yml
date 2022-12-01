@@ -6,14 +6,6 @@ jobs:
   create-envfile:
     runs-on: ubuntu-latest
     steps:
-      - name: Create File
-        uses: finnp/create-file-action@1.0.0
-          env:
-            FILE_NAME: "dir/fileName.txt"
-            FILE_DATA: "file content"
-
       - name: "Create env file"
         run: |
-          touch .env
-          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
-          cat .env
+          echo "${{ secrets.ENV_FILE }}" > .env
