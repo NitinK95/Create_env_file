@@ -1,5 +1,8 @@
 on: push
 jobs:
+  create-envfile:
+    runs-on: ubuntu-18.04
+
   build-node:
     runs-on: ubuntu-latest
     container: node:16
@@ -7,5 +10,11 @@ jobs:
       - run: node --version
       - run: npm --version
       - uses: actions/checkout@v3
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@master
+        with:
+          envkey_DEBUG: False
+          envkey_SECRET_KEY: "123456abcdef"
+          file_name: .env
       - run: npm install
       - run: node app.js
