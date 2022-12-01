@@ -2,13 +2,11 @@ name: Create envfile
 
 on: [push]
 
-jobs:
-  create-envfile:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: "Create env file"
-        run: |
-          touch .env
-          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
-          cat .env
+ jobs:    
+     create-envfile:
+           runs-on: ubuntu-latest
+           steps:
+              - name: Env create
+                run: |
+                   touch .env
+                        echo SECRET_KEY="q^p9eee+l$#mh6#c@#^eqno!j-e#8-$aq6(z9xbrqwep53dejiomv#" >> .env

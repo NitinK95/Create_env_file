@@ -1,5 +1,5 @@
 require("dotenv").config();
-console.log(`My env value is ${process.env.API_ENDPOINT}`);
+console.log(`My env value is ${process.env.SECRET_KEY}`);
 
 var moment = require("moment");
 var date = moment().format("LL");
