@@ -1,8 +1,5 @@
 on: push
 jobs:
-  create-envfile:
-    runs-on: ubuntu-18.04
-
   build-node:
     runs-on: ubuntu-latest
     container: node:16
