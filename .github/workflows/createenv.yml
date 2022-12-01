@@ -4,8 +4,9 @@ on: [push]
 
 jobs:
   create-envfile:
-    runs-on: ubuntu-latest
     steps:
       - name: "Create env file"
         run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
+          touch .env
+          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
+          cat .env
